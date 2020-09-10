@@ -1,0 +1,3 @@
+if else then 19.2E+3 prats 12.5.7
+34 >= 20E2 false
+543Esh
