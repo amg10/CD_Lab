@@ -1,6 +1,7 @@
-##Lab Assignment 1
+## Lab Assignment 1
 
-##Recap of RE and Finite automata
+## Recap of RE and Finite automata
+Aim: To write a program (in C or other language) to generate NFA for a given Regular Expression. Consider some alphabet with 2-3 elements. The program/system should take any RE over the alphabet as input, and it should generate its corresponding NFA as output. Also implement functions to transform to DFA, simulate the Automaton.
 
 ## How to run the code?
 Code can be compiled with following command on any systems with c++ compiler:
