@@ -1,6 +1,6 @@
-##Lab Assignment 4
+## Lab Assignment 4
 
-##Left Recursion removal, Left factoring, Top-down parsing
+## Left Recursion removal, Left factoring, Top-down parsing
 
 ## How to run the code?
 Code can be compiled with following command on any systems with c++ compiler:
