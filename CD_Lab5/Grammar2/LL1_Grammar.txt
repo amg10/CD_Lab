@@ -1,0 +1,26 @@
+P->prog DL SL end
+DL->D DL|#
+D->TY VL ;
+TY->int|float
+VL->id VL'
+SL->S SL|#
+S->ES|IS|WS|IOS
+ES->id := E ;
+IS->if BE then SL IS'
+WS->while BE do SL end
+IOS->print PE|scan id
+PE->E|str
+BE->AE BE'
+AE->NE AE'
+NE->not NE|{ BE }|RE
+RE->E RE'
+E->T E'
+T->F T'
+F->( E )|id|ic|fc
+BE'->or AE BE'|#
+AE'->and NE AE'|#
+E'->+ T E'|- T E'|#
+T'->* F T'|/ F T'|#
+VL'->VL|#
+IS'->end|else SL end
+RE'->= E|< E|> E

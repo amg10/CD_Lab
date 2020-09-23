@@ -1,0 +1,26 @@
+P $
+DL id if while print scan end
+D int float id if while print scan end
+TY id
+VL ;
+SL end else
+S id if while print scan end else
+ES id if while print scan end else
+IS id if while print scan end else
+WS id if while print scan end else
+IOS id if while print scan end else
+PE id if while print scan end else
+BE then do }
+AE or then do }
+NE and or then do }
+RE and or then do }
+E ; id if while print scan end else = > < ) and or then do }
+T + - ; id if while print scan end else = > < ) and or then do }
+F * / + - ; id if while print scan end else = > < ) and or then do }
+BE' then do }
+AE' or then do }
+E' ; id if while print scan end else = > < ) and or then do }
+T' + - ; id if while print scan end else = > < ) and or then do }
+VL' ;
+IS' id if while print scan end else
+RE' and or then do }

@@ -1,0 +1,26 @@
+P prog
+DL int float #
+D int float
+TY int float
+VL id
+SL id if while print scan #
+S id if while print scan
+ES id
+IS if
+WS while
+IOS print scan
+PE ( id ic fc str
+BE not { ( id ic fc
+AE not { ( id ic fc
+NE not { ( id ic fc
+RE ( id ic fc
+E ( id ic fc
+T ( id ic fc
+F ( id ic fc
+BE' or #
+AE' and #
+E' + - #
+T' * / #
+VL' id #
+IS' end else
+RE' = > <

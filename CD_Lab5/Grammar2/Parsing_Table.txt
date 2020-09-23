@@ -1,0 +1,29 @@
+
+Parsing Table:
+	prog	end	+	-	*	/	=	>	<	(	)	{	}	:=	;	and	else	ic	id	if	int	float	do	fc	not	or	print	scan	str	then	while	$	
+P	prog DL SL end																																
+DL		#																	#	#	D DL	D DL					#	#			#		
+D																					TY VL ;	TY VL ;											
+TY																					int	float											
+VL																			id VL'														
+SL		#															#		S SL	S SL							S SL	S SL			S SL		
+S																			ES	IS							IOS	IOS			WS		
+ES																			id := E ;														
+IS																				if BE then SL IS'													
+WS																															while BE do SL end		
+IOS																											print PE	scan id					
+PE										E								E	E					E					str				
+BE										AE BE'		AE BE'						AE BE'	AE BE'					AE BE'	AE BE'								
+AE										NE AE'		NE AE'						NE AE'	NE AE'					NE AE'	NE AE'								
+NE										RE		{ BE }						RE	RE					RE	not NE								
+RE										E RE'								E RE'	E RE'					E RE'									
+E										T E'								T E'	T E'					T E'									
+T										F T'								F T'	F T'					F T'									
+F										( E )								ic	id					fc									
+BE'													#										#			or AE BE'				#			
+AE'													#			and NE AE'							#			#				#			
+E'		#	+ T E'	- T E'			#	#	#		#		#		#	#	#		#	#			#			#	#	#		#	#		
+T'		#	#	#	* F T'	/ F T'	#	#	#		#		#		#	#	#		#	#			#			#	#	#		#	#		
+VL'															#				VL														
+IS'		end															else SL end																
+RE'							= E	> E	< E																								
