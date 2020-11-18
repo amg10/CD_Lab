@@ -1,0 +1,207 @@
+Grammar
+
+    0 $accept: ArithmeticExpression $end
+
+    1 ArithmeticExpression: E
+
+    2 E: E '+' E
+    3  | E '-' E
+    4  | E '*' E
+    5  | E '/' E
+    6  | '(' E ')'
+    7  | NUMBER
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    '(' (40) 6
+    ')' (41) 6
+    '*' (42) 4
+    '+' (43) 2
+    '-' (45) 3
+    '/' (47) 5
+    error (256)
+    NUMBER (258) 7
+
+
+Nonterminals, with rules where they appear
+
+    $accept (10)
+        on left: 0
+    ArithmeticExpression (11)
+        on left: 1
+        on right: 0
+    E (12)
+        on left: 2 3 4 5 6 7
+        on right: 1 2 3 4 5 6
+
+
+State 0
+
+    0 $accept: . ArithmeticExpression $end
+
+    NUMBER  shift, and go to state 1
+    '('     shift, and go to state 2
+
+    ArithmeticExpression  go to state 3
+    E                     go to state 4
+
+
+State 1
+
+    7 E: NUMBER .
+
+    $default  reduce using rule 7 (E)
+
+
+State 2
+
+    6 E: '(' . E ')'
+
+    NUMBER  shift, and go to state 1
+    '('     shift, and go to state 2
+
+    E  go to state 5
+
+
+State 3
+
+    0 $accept: ArithmeticExpression . $end
+
+    $end  shift, and go to state 6
+
+
+State 4
+
+    1 ArithmeticExpression: E .
+    2 E: E . '+' E
+    3  | E . '-' E
+    4  | E . '*' E
+    5  | E . '/' E
+
+    '+'  shift, and go to state 7
+    '-'  shift, and go to state 8
+    '*'  shift, and go to state 9
+    '/'  shift, and go to state 10
+
+    $default  reduce using rule 1 (ArithmeticExpression)
+
+
+State 5
+
+    2 E: E . '+' E
+    3  | E . '-' E
+    4  | E . '*' E
+    5  | E . '/' E
+    6  | '(' E . ')'
+
+    '+'  shift, and go to state 7
+    '-'  shift, and go to state 8
+    '*'  shift, and go to state 9
+    '/'  shift, and go to state 10
+    ')'  shift, and go to state 11
+
+
+State 6
+
+    0 $accept: ArithmeticExpression $end .
+
+    $default  accept
+
+
+State 7
+
+    2 E: E '+' . E
+
+    NUMBER  shift, and go to state 1
+    '('     shift, and go to state 2
+
+    E  go to state 12
+
+
+State 8
+
+    3 E: E '-' . E
+
+    NUMBER  shift, and go to state 1
+    '('     shift, and go to state 2
+
+    E  go to state 13
+
+
+State 9
+
+    4 E: E '*' . E
+
+    NUMBER  shift, and go to state 1
+    '('     shift, and go to state 2
+
+    E  go to state 14
+
+
+State 10
+
+    5 E: E '/' . E
+
+    NUMBER  shift, and go to state 1
+    '('     shift, and go to state 2
+
+    E  go to state 15
+
+
+State 11
+
+    6 E: '(' E ')' .
+
+    $default  reduce using rule 6 (E)
+
+
+State 12
+
+    2 E: E . '+' E
+    2  | E '+' E .
+    3  | E . '-' E
+    4  | E . '*' E
+    5  | E . '/' E
+
+    '*'  shift, and go to state 9
+    '/'  shift, and go to state 10
+
+    $default  reduce using rule 2 (E)
+
+
+State 13
+
+    2 E: E . '+' E
+    3  | E . '-' E
+    3  | E '-' E .
+    4  | E . '*' E
+    5  | E . '/' E
+
+    '*'  shift, and go to state 9
+    '/'  shift, and go to state 10
+
+    $default  reduce using rule 3 (E)
+
+
+State 14
+
+    2 E: E . '+' E
+    3  | E . '-' E
+    4  | E . '*' E
+    4  | E '*' E .
+    5  | E . '/' E
+
+    $default  reduce using rule 4 (E)
+
+
+State 15
+
+    2 E: E . '+' E
+    3  | E . '-' E
+    4  | E . '*' E
+    5  | E . '/' E
+    5  | E '/' E .
+
+    $default  reduce using rule 5 (E)
