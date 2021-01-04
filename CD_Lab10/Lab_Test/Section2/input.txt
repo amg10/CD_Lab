@@ -1,0 +1,7 @@
+main()
+abc := 5 * a + 7;
+print "abch";
+if a >= c : print %d a else print %d c end;
+while a>c : c:= c + 1 end;
+from b:=1 to a step 1 : b:=b*2 end
+end
